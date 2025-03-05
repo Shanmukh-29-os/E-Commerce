@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Product Page</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        nav {
+            background: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        /* Product Section */
+        .product {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .product img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .product img:hover {
+            transform: scale(1.1);
+        }
+        .product-details {
+            text-align: center;
+        }
+        .price {
+            font-size: 24px;
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .add-to-cart {
+            background: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .add-to-cart:hover {
+            background: #219150;
+        }
+        .cart-message {
+            margin-top: 10px;
+            font-weight: bold;
+            color: green;
+            display: none;
+        }
+        @media (max-width: 600px) {
+            .product {
+                width: 95%;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const addToCartBtn = document.querySelector(".add-to-cart");
+            const cartMessage = document.querySelector(".cart-message");
+            addToCartBtn.addEventListener("click", () => {
+                cartMessage.style.display = "block";
+                setTimeout(() => {
+                    cartMessage.style.display = "none";
+                }, 2000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <section class="product">
+        <div class="product-image">
+            <img src="images e/product.jpg" alt="Product Image">
+        </div>
+        <div class="product-details">
+            <h1>Product Name</h1>
+            <p class="price">$99.99</p>
+            <p class="description">This is a short description of the product highlighting its features and benefits.</p>
+            <button class="add-to-cart">Add to Cart</button>
+            <p class="cart-message">Added to cart!</p>
+        </div>
+    </section>
+    <section class="reviews">
+        <h2>Customer Reviews</h2>
+        <p>⭐⭐⭐⭐☆ - "Great product! Highly recommended."</p>
+        <p>⭐⭐⭐⭐⭐ - "Excellent quality and fast shipping!"</p>
+    </section>
+    <section class="related-products">
+        <h2>Related Products</h2>
+        <div class="related-item">
+            <img src="images e/related1.jpg" alt="Related Product 1">
+            <p>Related Product 1</p>
+        </div>
+        <div class="related-item">
+            <img src="images e/related2.jpg" alt="Related Product 2">
+            <p>Related Product 2</p>
+        </div>
+    </section>
+</body>
+</html>
